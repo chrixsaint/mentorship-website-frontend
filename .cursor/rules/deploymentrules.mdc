@@ -1,0 +1,16 @@
+---
+description: rules:
+  - name: Environment Variables
+    patterns:
+      - Never hardcode API keys or passwords.
+      - Store them in `.env` and reference via `process.env`.
+
+  - name: Build & Deploy
+    patterns:
+      - Optimize images before deployment.
+      - Minify CSS and JS in production.
+      - Test API endpoints on deployed environment before release.
+
+globs:
+alwaysApply: false
+---

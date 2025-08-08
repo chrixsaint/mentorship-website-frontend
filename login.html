@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mentorship Platform</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <!-- Main login container -->
+    <main class="login-container">
+        <!-- Login form section -->
+        <section class="login-form-section">
+            <!-- Page header -->
+            <header class="login-header">
+                <h1 class="login-title">Login</h1>
+            </header>
+
+            <!-- Login form -->
+            <form class="login-form" action="#" method="POST" novalidate>
+                <!-- Email input field -->
+                <div class="input-group">
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Email" required
+                        autocomplete="email">
+                </div>
+
+                <!-- Password input field -->
+                <div class="input-group">
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Password"
+                        required autocomplete="current-password" minlength="6">
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="login-button" data-original-text="Login">
+                    Login
+                </button>
+
+                <!-- Forgot password link -->
+                <div class="forgot-password-section">
+                    <a href="#" class="forgot-password-link">Forgot Password?</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Load shared utilities if needed -->
+    <script src="scripts.js"></script>
+    <!-- Load page-specific script -->
+    <script src="login.js"></script>
+</body>
+
+</html>

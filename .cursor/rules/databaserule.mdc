@@ -1,0 +1,41 @@
+---
+description: rules:
+  - name: Sequelize Models
+    patterns:
+      - Create one model file per database table (e.g., `user.js`, `resource.js`).
+      - Keep each model file under ~150 lines.
+      - Use singular, PascalCase model names (`User`, `Resource`).
+      - Enable `underscored: true` so database columns use snake_case.
+      - Always define timestamps: `createdAt`, `updatedAt`.
+      - Do not put business logic inside model definitions — move it to services.
+
+  - name: Queries
+    patterns:
+      - Use Sequelize’s query methods (findOne, findAll, create, update, destroy) instead of raw SQL unless necessary.
+      - If raw SQL is used, ensure it is parameterized to prevent SQL injection.
+      - Avoid `SELECT *` — specify only needed columns.
+      - Keep queries modular — one query per function in a service or repository file.
+      - Keep query files under ~200 lines.
+
+  - name: Relationships
+    patterns:
+      - Define associations (hasOne, hasMany, belongsTo, belongsToMany) inside a model’s `associate()` method.
+      - Use descriptive foreign key names (`user_id`, `resource_id`).
+      - Keep association logic in one place, ideally `models/index.js`.
+
+  - name: Migrations & Seeders
+    patterns:
+      - One migration per file, describing a single change.
+      - Keep migration files under ~150 lines.
+      - Use clear, descriptive names (e.g., `create-users-table.js`).
+      - Seeders should be modular and reusable for testing.
+
+  - name: Documentation Reminder Rule
+    patterns:
+      - Always reference official docs before suggesting fixes or code:
+        - Sequelize → https://sequelize.org/docs/v6/
+        - MySQL → https://dev.mysql.com/doc/
+
+globs:
+alwaysApply: false
+---

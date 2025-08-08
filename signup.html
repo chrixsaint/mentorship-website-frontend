@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Mentorship Platform</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <!-- Main signup container -->
+    <main class="signup-container">
+        <!-- Signup form section -->
+        <section class="signup-form-section">
+            <!-- Page header -->
+            <header class="signup-header">
+                <h1 class="signup-title">Signup</h1>
+            </header>
+
+            <!-- Signup form -->
+            <form id="signupForm" class="signup-form" action="#" method="POST" novalidate>
+                <!-- Email input field -->
+                <div class="input-group">
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Email" required
+                        autocomplete="email" aria-describedby="email-error">
+                    <span id="email-error" class="error-message" aria-live="polite"></span>
+                </div>
+
+                <!-- First name input field -->
+                <div class="input-group">
+                    <input type="text" id="firstname" name="firstname" class="form-input" placeholder="Firstname"
+                        required autocomplete="given-name" pattern="^[A-Za-z\s\-]+$" minlength="2" maxlength="50"
+                        title="First name must contain only letters, spaces, or hyphens and be 2-50 characters long"
+                        aria-describedby="firstname-error">
+                    <span id="firstname-error" class="error-message" aria-live="polite"></span>
+                </div>
+
+                <!-- Last name input field -->
+                <div class="input-group">
+                    <input type="text" id="lastname" name="lastname" class="form-input" placeholder="Lastname" required
+                        autocomplete="family-name" pattern="^[A-Za-z\s\-]+$" minlength="2" maxlength="50"
+                        title="Last name must contain only letters, spaces, or hyphens and be 2-50 characters long"
+                        aria-describedby="lastname-error">
+                    <span id="lastname-error" class="error-message" aria-live="polite"></span>
+                </div>
+
+                <!-- Country input field -->
+                <div class="input-group">
+                    <input type="text" id="country" name="country" class="form-input" placeholder="Country" required
+                        autocomplete="country" minlength="1" title="Please enter a valid country name"
+                        aria-describedby="country-error">
+                    <span id="country-error" class="error-message" aria-live="polite"></span>
+                </div>
+
+                <!-- Password input field -->
+                <div class="input-group">
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Password"
+                        required autocomplete="new-password" minlength="8"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
+                        title="Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character"
+                        aria-describedby="password-error">
+                    <span id="password-error" class="error-message" aria-live="polite"></span>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="login-button" data-original-text="Signup">
+                    Signup
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Load shared utilities only if needed -->
+    <script src="scripts.js"></script>
+    <!-- Load page-specific script -->
+    <script src="signup.js"></script>
+</body>
+
+</html>

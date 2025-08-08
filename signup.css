@@ -1,0 +1,235 @@
+/* ===========================
+   CSS RESET & BASE STYLES
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    /* Base font size for rem calculations */
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    /* Primary Sans fallback */
+    background-color: #FFFFFF;
+    color: #000000;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* ===========================
+   MAIN CONTAINER LAYOUT
+   =========================== */
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 60px 20px;
+    /* Responsive padding */
+}
+
+.signup-form-section {
+    width: 100%;
+    max-width: 400px;
+    /* Fixed width for desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Left-aligned content */
+}
+
+/* ===========================
+   HEADER STYLES
+   =========================== */
+
+.signup-header {
+    width: 100%;
+    margin-bottom: 39px;
+    /* Exact spacing from spec */
+}
+
+.signup-title {
+    font-size: 33px;
+    font-weight: bold;
+    letter-spacing: 0em;
+    line-height: 1.2em;
+    color: #000000;
+    text-align: left;
+}
+
+/* ===========================
+   FORM LAYOUT
+   =========================== */
+
+.signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* Full width for form elements */
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 39px;
+    /* Gap between input fields */
+}
+
+/* Remove margin from last input group */
+.input-group:last-of-type {
+    margin-bottom: 44px;
+    /* Gap between last input and button */
+}
+
+/* ===========================
+   INPUT FIELD STYLES
+   =========================== */
+
+.form-input {
+    width: 100%;
+    padding: 18px 16px;
+    /* Top/bottom: 18px, Left/right: 16px */
+    border: 1px solid #000000;
+    border-radius: 22px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0em;
+    line-height: 1.5em;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+/* Input field placeholder styling */
+.form-input::placeholder {
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 1;
+    /* Ensure consistent placeholder visibility */
+}
+
+/* Input field focus state */
+.form-input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   BUTTON STYLES
+   =========================== */
+
+.login-button {
+    width: 100%;
+    padding: 18px;
+    /* Top/bottom padding */
+    border: none;
+    border-radius: 22px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    /* Medium weight */
+    letter-spacing: 0em;
+    line-height: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Button hover and active states */
+.login-button:hover {
+    background-color: #333333;
+    transform: translateY(-1px);
+}
+
+.login-button:active {
+    transform: translateY(0);
+    background-color: #000000;
+}
+
+.login-button:focus {
+    outline: 2px solid #333333;
+    outline-offset: 2px;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Mobile-first approach - styles above are for mobile */
+
+/* Tablet breakpoint */
+@media (min-width: 768px) {
+    .signup-container {
+        padding: 80px 40px;
+        align-items: center;
+        /* Center vertically on larger screens */
+    }
+
+    .signup-form-section {
+        max-width: 420px;
+        /* Slightly wider on tablets */
+    }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+    .signup-container {
+        padding: 100px 60px;
+    }
+
+    .signup-form-section {
+        max-width: 400px;
+        /* Original desktop width */
+    }
+}
+
+/* Large desktop breakpoint */
+@media (min-width: 1440px) {
+    .signup-container {
+        padding: 120px 80px;
+    }
+}
+
+/* ===========================
+   ACCESSIBILITY ENHANCEMENTS
+   =========================== */
+
+/* Focus management for keyboard navigation */
+.form-input:focus,
+.login-button:focus {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .form-input {
+        border-width: 2px;
+    }
+
+    .login-button {
+        border: 2px solid #000000;
+    }
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    .form-input,
+    .login-button {
+        transition: none;
+    }
+
+    .login-button:hover {
+        transform: none;
+    }
+}

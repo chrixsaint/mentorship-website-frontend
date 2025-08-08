@@ -1,0 +1,153 @@
+/* Profile Page Specific Styles */
+
+/* Profile Section */
+.profile-section {
+    max-width: 800px;
+}
+
+.profile-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
+    line-height: 1.2em;
+}
+
+/* Profile Card Container */
+.profile-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 30px;
+    width: 75%;
+    max-width: 600px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Fields Container */
+.profile-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Individual Profile Field */
+.profile-field {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+.profile-field-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 0.01em;
+    line-height: 1.5em;
+    min-width: 100px;
+    margin-right: 100px;
+    flex-shrink: 0;
+}
+
+.profile-field-value {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    letter-spacing: 0.01em;
+    line-height: 1.5em;
+    flex: 1;
+    margin: 0;
+}
+
+/* Sidebar adjustments for profile page */
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-item:last-child {
+    margin-bottom: 0;
+}
+
+.nav-link--active {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 8px;
+    padding: 15px 20px;
+}
+
+/* Responsive Design for Profile */
+@media (max-width: 768px) {
+    .profile-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .profile-field {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .profile-field-label {
+        margin-right: 0;
+        min-width: auto;
+    }
+
+    .profile-field-value {
+        padding-left: 0;
+    }
+
+    .profile-fields {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-heading {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .profile-card {
+        padding: 15px;
+    }
+
+    .profile-field-label,
+    .profile-field-value {
+        font-size: 13px;
+    }
+
+    .profile-fields {
+        gap: 15px;
+    }
+}
+
+/* Focus states for accessibility */
+.profile-field:focus-within {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Print styles */
+@media print {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 0;
+    }
+
+    .profile-card {
+        box-shadow: none;
+        border: 1px solid #000;
+        width: 100%;
+    }
+}

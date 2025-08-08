@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email</title>
+    <link rel="stylesheet" href="verifyEmail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="verification-container">
+        <section class="verification-form" role="form" aria-labelledby="verification-heading">
+            <header class="verification-header">
+                <h1 id="verification-heading" class="verification-title">Verify your email</h1>
+            </header>
+
+            <div class="verification-content">
+                <div class="input-group" role="group" aria-label="Verification code input">
+                    <input type="text" class="verification-input" maxlength="1"
+                        aria-label="First digit of verification code" inputmode="numeric" pattern="[0-9]"
+                        autocomplete="one-time-code">
+                    <input type="text" class="verification-input" maxlength="1"
+                        aria-label="Second digit of verification code" inputmode="numeric" pattern="[0-9]"
+                        autocomplete="one-time-code">
+                    <input type="text" class="verification-input" maxlength="1"
+                        aria-label="Third digit of verification code" inputmode="numeric" pattern="[0-9]"
+                        autocomplete="one-time-code">
+                    <input type="text" class="verification-input" maxlength="1"
+                        aria-label="Fourth digit of verification code" inputmode="numeric" pattern="[0-9]"
+                        autocomplete="one-time-code">
+                </div>
+
+                <div class="verification-actions">
+                    <button type="submit" class="verify-button" aria-describedby="verification-heading">
+                        verify
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="verifyEmail.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+/* ===========================
+   CSS RESET & BASE STYLES
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    /* Base font size for rem calculations */
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    /* Placeholder Sans fallback */
+    background-color: #FFFFFF;
+    color: #000000;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* ===========================
+   MAIN CONTAINER LAYOUT
+   =========================== */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 220px 440px;
+    /* Desktop padding from specs */
+}
+
+.login-form-section {
+    width: 100%;
+    max-width: 400px;
+    /* Fixed width for consistent form size */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Left-aligned content */
+}
+
+/* ===========================
+   HEADER STYLES
+   =========================== */
+
+.login-header {
+    width: 100%;
+    margin-bottom: 22px;
+    /* Exact spacing from spec */
+}
+
+.login-title {
+    font-size: 33px;
+    font-weight: bold;
+    /* Medium/Bold as specified */
+    letter-spacing: 0.0em;
+    line-height: 1.2em;
+    color: #000000;
+    text-align: left;
+}
+
+/* ===========================
+   FORM LAYOUT
+   =========================== */
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* Full width for form elements */
+}
+
+.input-group {
+    width: 100%;
+}
+
+/* Spacing between email and password inputs */
+.input-group:first-of-type {
+    margin-bottom: 37px;
+    /* Gap between email and password */
+}
+
+/* Spacing between password input and login button */
+.input-group:last-of-type {
+    margin-bottom: 55px;
+    /* Gap between password and button */
+}
+
+/* ===========================
+   INPUT FIELD STYLES
+   =========================== */
+
+.form-input {
+    width: 100%;
+    padding: 16px 20px;
+    /* Vertical: 16px, Horizontal: 20px */
+    border: 1px solid #000000;
+    border-radius: 22px;
+    /* Consistent with signup page */
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.0em;
+    line-height: 1.5em;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Input field placeholder styling */
+.form-input::placeholder {
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    opacity: 1;
+    /* Ensure consistent placeholder visibility */
+}
+
+/* Input field focus state */
+.form-input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   BUTTON STYLES
+   =========================== */
+
+.login-button {
+    width: 100%;
+    padding: 16px 50px;
+    /* Vertical: 16px, Horizontal: 20px-50px (wider) */
+    border: none;
+    border-radius: 22px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.0em;
+    line-height: 1.5em;
+    text-align: center;
+    /* Center-aligned button text */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 55px;
+}
+
+/* Button hover and active states */
+.login-button:hover {
+    background-color: #333333;
+    transform: translateY(-1px);
+}
+
+.login-button:active {
+    transform: translateY(0);
+    background-color: #000000;
+}
+
+.login-button:focus {
+    outline: 2px solid #333333;
+    outline-offset: 2px;
+}
+
+/* ===========================
+   FORGOT PASSWORD LINK
+   =========================== */
+
+.forgot-password-section {
+    width: 100%;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 85px;
+}
+
+.forgot-password-link {
+    color: #666666;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.forgot-password-link:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.forgot-password-link:focus {
+    outline: 2px solid #333333;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Mobile breakpoint */
+@media (max-width: 767px) {
+    .login-container {
+        padding: 40px 20px;
+        /* Reduced padding for mobile */
+        align-items: flex-start;
+        /* Top-aligned on mobile */
+        padding-top: 80px;
+        /* Some top spacing */
+    }
+
+    .login-form-section {
+        max-width: 100%;
+        /* Full width on mobile */
+    }
+
+    .login-title {
+        font-size: 28px;
+        /* Slightly smaller on mobile */
+    }
+
+    .form-input {
+        padding: 14px 16px;
+        /* Slightly reduced padding */
+    }
+
+    .login-button {
+        padding: 14px 30px;
+        /* Adjusted button padding */
+        font-size: 16px;
+        /* Slightly smaller button text */
+    }
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .login-container {
+        padding: 120px 80px;
+        /* Reduced padding for tablets */
+    }
+
+    .login-form-section {
+        max-width: 420px;
+        /* Slightly wider on tablets */
+    }
+}
+
+/* Small desktop breakpoint */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .login-container {
+        padding: 160px 200px;
+        /* Moderate padding for small desktops */
+    }
+}
+
+/* Large desktop breakpoint - original specs */
+@media (min-width: 1440px) {
+    .login-container {
+        padding: 220px 440px;
+        /* Full desktop padding from specs */
+    }
+}
+
+/* ===========================
+   ACCESSIBILITY ENHANCEMENTS
+   =========================== */
+
+/* Focus management for keyboard navigation */
+.form-input:focus,
+.login-button:focus {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .form-input {
+        border-width: 2px;
+    }
+
+    .login-button {
+        border: 2px solid #000000;
+    }
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    .form-input,
+    .login-button {
+        transition: none;
+    }
+
+    .login-button:hover {
+        transform: none;
+    }
+}
+
+/* ===========================
+   FORM VALIDATION STYLES
+   =========================== */
+
+/* Valid input styling */
+.form-input:valid {
+    border-color: #000000;
+}
+
+/* Invalid input styling */
+.form-input:invalid:not(:placeholder-shown) {
+    border-color: #ff0000;
+}
+
+/* Error input styling for JavaScript validation */
+.form-input.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Focus within form for better UX */
+.login-form:focus-within .login-button {
+    background-color: #333333;
+}

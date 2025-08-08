@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Mentorship Platform</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="transactions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="transaction.html" class="nav-link nav-link--active"
+                            aria-current="page">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content" role="main">
+            <!-- Transactions Section -->
+            <section class="transactions-section" aria-labelledby="transactions-heading">
+                <h1 id="transactions-heading" class="transactions-heading">Transactions</h1>
+
+                <!-- Transaction Items List -->
+                <div id="transaction-list" class="transaction-list" role="list" aria-label="Transaction history">
+
+                    <!-- These static items will be replaced by dynamic content -->
+                    <article class="transaction-item" role="listitem">
+                        <div class="transaction-icon">
+                            <div class="transaction-circle" aria-hidden="true"><img class="img"
+                                    src="./images/arrow-down-circle.svg" alt="arrow down logo" /></div>
+                        </div>
+
+                        <div class="transaction-details">
+                            <div class="transaction-main-text">Wallet funding</div>
+                            <div class="transaction-secondary-text">12 July 2028</div>
+                        </div>
+
+                        <div class="transaction-meta">
+                            <div class="transaction-id">ghahatbjfkajcnjioekskash</div>
+                            <div class="transaction-amount">$5000.0</div>
+                        </div>
+                    </article>
+
+                    <!-- Transaction Item 2 -->
+                    <article class="transaction-item" role="listitem">
+                        <div class="transaction-icon">
+                            <div class="transaction-circle" aria-hidden="true"><img class="img"
+                                    src="./images/arrow-down-circle.svg" alt="arrow down logo" /></div>
+                        </div>
+
+                        <div class="transaction-details">
+                            <div class="transaction-main-text">Wallet funding</div>
+                            <div class="transaction-secondary-text">11 July 2028</div>
+                        </div>
+
+                        <div class="transaction-meta">
+                            <div class="transaction-id">bfkajcnjioeksashghahatj</div>
+                            <div class="transaction-amount">$3200.0</div>
+                        </div>
+                    </article>
+
+                    <!-- Transaction Item 3 -->
+                    <article class="transaction-item" role="listitem">
+                        <div class="transaction-icon">
+                            <div class="transaction-circle" aria-hidden="true"><img class="img"
+                                    src="./images/arrow-down-circle.svg" alt="arrow down logo" /></div>
+                        </div>
+
+                        <div class="transaction-details">
+                            <div class="transaction-main-text">Wallet funding</div>
+                            <div class="transaction-secondary-text">10 July 2028</div>
+                        </div>
+
+                        <div class="transaction-meta">
+                            <div class="transaction-id">njioeksashghahatbjfkajc</div>
+                            <div class="transaction-amount">$1500.0</div>
+                        </div>
+                    </article>
+
+                    <!-- Transaction Item 4 -->
+                    <article class="transaction-item" role="listitem">
+                        <div class="transaction-icon">
+                            <div class="transaction-circle" aria-hidden="true"><img class="img"
+                                    src="./images/arrow-down-circle.svg" alt="arrow down logo" /></div>
+                        </div>
+
+                        <div class="transaction-details">
+                            <div class="transaction-main-text">Wallet funding</div>
+                            <div class="transaction-secondary-text">09 July 2028</div>
+                        </div>
+
+                        <div class="transaction-meta">
+                            <div class="transaction-id">eksashghahatbjfkajcnjio</div>
+                            <div class="transaction-amount">$2800.0</div>
+                        </div>
+                    </article>
+
+                    <!-- Transaction Item 5 -->
+                    <article class="transaction-item" role="listitem">
+                        <div class="transaction-icon">
+                            <div class="transaction-circle" aria-hidden="true"><img class="img"
+                                    src="./images/arrow-down-circle.svg" alt="arrow down logo" /></div>
+                        </div>
+
+                        <div class="transaction-details">
+                            <div class="transaction-main-text">Wallet funding</div>
+                            <div class="transaction-secondary-text">08 July 2028</div>
+                        </div>
+
+                        <div class="transaction-meta">
+                            <div class="transaction-id">ashghahatbjfkajcnjioeks</div>
+                            <div class="transaction-amount">$4100.0</div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        AuthUtils.requireAuth(); // ✅ Protect the page
+        NavUtils.setActiveNav("transaction.html"); // ✅ Highlight current nav
+        loadTransactionsPage(); // ✅ Fetch and display transactions
+    </script>
+</body>
+
+</html>

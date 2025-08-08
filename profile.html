@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Mentorship Platform</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="transaction.html" class="nav-link">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-link">Profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content" role="main">
+            <!-- Profile Section -->
+            <section class="profile-section" aria-labelledby="profile-heading">
+                <h1 id="profile-heading" class="profile-heading">Profile</h1>
+
+                <!-- Profile Information Card -->
+                <div class="profile-card" role="region" aria-label="User profile information">
+
+                    <!-- Profile Fields -->
+                    <div class="profile-fields">
+
+                        <div class="profile-field" role="group">
+                            <dt class="profile-field-label">Name:</dt>
+                            <dd class="profile-field-value" id="userName"></dd>
+                        </div>
+
+                        <div class="profile-field" role="group">
+                            <dt class="profile-field-label">Email:</dt>
+                            <dd class="profile-field-value" id="userEmail"></dd>
+                        </div>
+
+                        <div class="profile-field" role="group">
+                            <dt class="profile-field-label">Country:</dt>
+                            <dd class="profile-field-value" id="userCountry"></dd>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        AuthUtils.requireAuth();
+        loadUserDetails();
+        NavUtils.setActiveNav(window.location.pathname);
+    </script>
+
+</body>
+
+</html>

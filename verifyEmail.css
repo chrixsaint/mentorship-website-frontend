@@ -1,0 +1,168 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Main container */
+.verification-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Verification form section */
+.verification-form {
+    width: 100%;
+    text-align: center;
+}
+
+/* Header section */
+.verification-header {
+    margin-bottom: 30px;
+}
+
+.verification-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    /* Semi-bold */
+    letter-spacing: 0em;
+    line-height: 1.2em;
+    color: #000000;
+    margin: 0;
+}
+
+/* Content section */
+.verification-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Input group styling */
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.verification-input {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.verification-input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.verification-input:hover {
+    border-color: #999999;
+}
+
+/* Verify button styling */
+.verification-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.verify-button {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    /* Medium */
+    letter-spacing: 0em;
+    line-height: 1.2em;
+    text-transform: lowercase;
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+    border-radius: 8px;
+    padding: 20px 40px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+.verify-button:hover {
+    background-color: #333333;
+    transform: translateY(-1px);
+}
+
+.verify-button:active {
+    background-color: #000000;
+    transform: translateY(0);
+}
+
+.verify-button:focus {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .verification-title {
+        font-size: 20px;
+    }
+
+    .verification-input {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .input-group {
+        gap: 8px;
+    }
+
+    .verify-button {
+        padding: 16px 32px;
+        font-size: 14px;
+    }
+
+    .verification-content {
+        gap: 30px;
+    }
+
+    .verification-header {
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 320px) {
+    .verification-input {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .input-group {
+        gap: 6px;
+    }
+}

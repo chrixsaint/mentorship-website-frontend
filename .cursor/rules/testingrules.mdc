@@ -1,0 +1,15 @@
+---
+description: rules:
+  - name: Unit Testing
+    patterns:
+      - Each test file should match the filename of the file it tests.
+      - Use descriptive test names (e.g., "POST /login should return 200 if valid credentials").
+
+  - name: API Testing
+    patterns:
+      - Test all API endpoints for success and failure cases.
+      - Use mock DB for testing — don’t hit production DB.
+
+globs:
+alwaysApply: false
+---

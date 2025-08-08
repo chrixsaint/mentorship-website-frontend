@@ -1,0 +1,486 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Header Section */
+.header {
+  background-color: #000000;
+  width: 100%;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 43px 128px 43px 124px;
+  width: 100%;
+}
+
+/* Logo */
+.header__logo {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 27px;
+  letter-spacing: 0em;
+}
+
+/* Navigation and Actions Container */
+.header__nav-actions {
+  display: flex;
+  align-items: center;
+  margin-left: 279px;
+  /* Spacing between logo and navigation */
+}
+
+/* Navigation */
+.header__nav {
+  margin-right: 66px;
+  /* Gap between Privacy policy and Get started */
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list li {
+  margin-right: 74px;
+  /* Default gap */
+}
+
+.nav__list li:nth-child(2) {
+  margin-right: 94px;
+  /* Contact to Privacy policy gap */
+}
+
+.nav__list li:last-child {
+  margin-right: 0;
+  /* Remove margin from last item */
+}
+
+.nav__list a {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+/* CTA Buttons */
+.header__actions {
+  display: flex;
+  gap: 61px;
+  /* Gap between buttons */
+}
+
+.btn {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  letter-spacing: 0em;
+  border-radius: 30px;
+  padding: 13px 24px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* Get started button */
+.btn--white {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Login button */
+.btn--outline {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+
+/* Second Section - Hero Section */
+.hero-section {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.hero-section__container {
+  display: flex;
+  align-items: flex-start;
+  padding: 101px 128px 0px 124px;
+  gap: 66px;
+  /* Gap between left column (text) and right column (image) */
+  width: 100%;
+}
+
+/* Left Column - Text Content */
+.hero-section__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Heading (H1) */
+.hero-section__heading {
+  font-family: "Inter", sans-serif;
+  font-size: 46px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  margin-bottom: 38px;
+  /* Gap to sub-heading */
+}
+
+/* Sub-heading (H2) */
+.hero-section__subheading {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 27px;
+  letter-spacing: 0em;
+  margin-bottom: 56px;
+  /* Gap to paragraph */
+}
+
+/* Paragraph Text */
+.hero-section__paragraph {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 56px;
+  letter-spacing: 0em;
+  margin: 0;
+}
+
+/* Right Column - Image */
+.hero-section__image {
+  flex-shrink: 0;
+}
+
+.hero-section__image img {
+  width: 612px;
+  height: 408px;
+  object-fit: cover;
+  border-radius: 0px;
+  display: block;
+}
+
+/* Third Section - Mentor Section */
+.mentor-section {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 100px 50px;
+  /* Outer section padding */
+}
+
+.mentor-section__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mentor-section__content {
+  background-color: #f8f8f8;
+  padding: 56px 208px 56px 329px;
+  /* Inner content block padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Image */
+.mentor-section__image {
+  margin-bottom: 70px;
+  /* Gap to caption text */
+}
+
+.mentor-section__image img {
+  width: 803px;
+  height: 535px;
+  object-fit: cover;
+  border-radius: 0px;
+  display: block;
+}
+
+/* Caption Text */
+.mentor-section__caption {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 30px;
+  width: 100%;
+  padding: 0px 90px 0px 210px;
+  margin: 0 auto 107px auto;
+  /* Center and gap to button */
+}
+
+/* Call-to-Action Button */
+.mentor-section__button {
+  /* font-family: "Inter", sans-serif; */
+  /* font-size: 24px; */
+  /* font-weight: bold; */
+  color: #ffffff;
+  background-color: #000000;
+  /* border-radius: 28px; */
+  padding: 29px 27px 29px 91px;
+  /* margin: 0px 210px 90px 210px; */
+  /* text-decoration: none; */
+  /* text-align: center; */
+  display: inline-block;
+  width: 382px;
+  height: 90px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+/* Fourth Section - Statistics Section */
+
+/* =============================
+   Hero Section Styling
+============================= */
+.hero {
+  /* Outer padding to frame the content */
+  padding: 71px 124px 111px 127px;
+}
+
+.hero__container {
+  display: flex;
+  align-items: center;
+  /* Vertically center image and text */
+  gap: 188px;
+  /* Gap between image and text block */
+}
+
+/* === Left: Image Styling === */
+.hero__image img {
+  display: block;
+  width: auto;
+  /* Adjust as needed or match image size */
+  height: auto;
+  object-fit: cover;
+}
+
+/* === Right: Text Styling === */
+.hero__text p {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.4em;
+  text-align: left;
+  max-width: 600px;
+  /* Optional: to control line length */
+}
+
+
+/* Footer Section Styling */
+.footer-section {
+  /* Fixed width as per spec */
+  /* Fixed height as per spec */
+  background-color: #000000;
+  /* Outer Background (below footer) is now the footer's main background */
+  padding-top: 139px;
+  /* Top padding as specified */
+  padding-bottom: 137px;
+  /* Bottom padding as specified */
+  box-sizing: border-box;
+  /* Include padding in the element's total width and height */
+  /* Center the fixed-width footer */
+}
+
+.footer-content-wrapper {
+  /* This wrapper will contain the actual content and help with overall horizontal alignment if needed */
+  width: calc(100% - (90px * 2));
+  /* Adjust width based on left/right padding */
+  max-width: 1260px;
+  /* Max width to ensure content doesn't stretch too wide */
+  margin-left: 90px;
+  /* Left padding from footer edge background */
+  /* No right margin explicitly set, will be handled by max-width and left margin */
+}
+
+/* Top Section - Copyright/Location Information */
+.footer-top {
+  margin-bottom: 115px;
+  /* Separator Line to Main Links Section */
+}
+
+.footer-info {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  /* Bold */
+  color: #ffffff;
+  line-height: 1.5;
+  letter-spacing: 0em;
+  margin-top: 81px;
+  /* Top Padding to "Monodat inc." */
+  margin-bottom: 32px;
+  /* Text to Separator Line */
+}
+
+.footer-separator {
+  border: none;
+  border-top: 1px solid #ffffff;
+  width: 644px;
+  /* Fixed width as per spec */
+  margin: 0;
+  /* Remove default margin */
+}
+
+/* Main Footer Links Section */
+.footer-main-links {
+  display: flex;
+  justify-content: flex-start;
+  /* Align columns to the start */
+  /* Gaps between columns handled by explicit margins for now */
+  /* margin-bottom: 137px; */
+}
+
+.footer-column {
+  /* Default styling for each column */
+}
+
+.footer-column:nth-child(1) {
+  /* Monodart column - no specific right margin needed if flex handles it */
+}
+
+.footer-column:nth-child(2) {
+  margin-left: 427px;
+  /* Gap between Monodart and Store */
+}
+
+.footer-column:nth-child(3) {
+  margin-left: 430px;
+  /* Gap between Store and Developers */
+}
+
+.column-heading {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  /* Semi bold */
+  color: #ffffff;
+  line-height: 1.4;
+  letter-spacing: 0em;
+  margin-top: 0;
+  /* Remove default margin */
+  margin-bottom: 40px;
+  /* Gap between Column Headings and their Links */
+}
+
+.column-links {
+  list-style: none;
+  /* Remove bullet points */
+  padding: 0;
+  /* Remove default padding */
+  margin: 0;
+  /* Remove default margin */
+}
+
+.column-links li {
+  margin-bottom: 28px;
+  /* Gap between individual links within a column */
+}
+
+.column-links li:last-child {
+  margin-bottom: 0;
+  /* No bottom margin for the last link in a column */
+}
+
+.footer-link {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  /* Semi bold */
+  color: #d3d3d3;
+  /* Light Grey */
+  line-height: 1.8;
+  letter-spacing: 0em;
+  text-decoration: none;
+  /* Remove underline */
+  display: block;
+  /* Make the whole area clickable */
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  /* Example hover effect */
+}
+
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+
+.cta-button {
+  /* Typography */
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+
+  /* Layout */
+  display: inline-block;
+  padding: 16px 32px;
+
+  /* Styling */
+  background-color: #000000;
+  border: none;
+  border-radius: 33px;
+
+  /* Effects */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  /* Prevent text selection */
+  user-select: none;
+}
+
+.cta-button:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+}

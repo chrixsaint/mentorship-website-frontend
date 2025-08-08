@@ -1,0 +1,50 @@
+---
+description: rules:
+  - name: Routing
+    patterns:
+      - Use one route file per resource type (e.g., `users.js`, `resources.js`).
+      - Keep each route file under ~150–200 lines.
+      - Do not put business logic inside route handlers — delegate to controllers.
+      - Prefix all API endpoints with `/api/v1/`.
+
+  - name: Controllers
+    patterns:
+      - One controller file per resource (e.g., `userController.js`).
+      - Keep each function under ~50 lines.
+      - Extract reusable logic into helper/utility modules.
+      - Never exceed ~200–300 lines in a controller file.
+
+  - name: Middleware
+    patterns:
+      - Create separate files for different middleware types (e.g., `auth.js`, `errorHandler.js`).
+      - Keep middleware functions focused on a single purpose.
+      - Use centralized error-handling middleware.
+
+  - name: Models
+    patterns:
+      - One file per Sequelize model.
+      - Keep models lean — no unrelated logic inside models.
+      - Place any data transformation or computed property logic in separate service files.
+
+  - name: Services/Helpers
+    patterns:
+      - Move reusable business logic to `/services` or `/utils` directories.
+      - Never repeat logic in multiple controllers — import from services.
+      - Use clear, descriptive function names for helpers.
+
+  - name: Async/Await
+    patterns:
+      - Always use async/await for DB calls and external API calls.
+      - Wrap async functions in try/catch and forward errors to error middleware.
+
+  - name: Documentation Reminder Rule
+    patterns:
+      - Always reference official docs before suggesting fixes or code:
+        - Node.js → https://nodejs.org/en/docs
+        - Express → https://expressjs.com/en/4x/api.html
+        - Sequelize → https://sequelize.org/docs/v6/
+        - MySQL → https://dev.mysql.com/doc/
+
+globs:
+alwaysApply: false
+---

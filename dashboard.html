@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mentorship Platform</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="transaction.html" class="nav-link">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="nav-link">Profile</a>
+                    </li>
+                </ul>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content" role="main">
+            <!-- Wallet Balance Section -->
+            <section class="wallet-section" aria-labelledby="wallet-heading">
+                <h1 id="wallet-heading" class="wallet-heading">Wallet balance</h1>
+
+                <div class="balance-cards">
+                    <div class="balance-card" role="group" aria-label="USD Balance">
+                        <div class="balance-amount" id="balance1">NGN20,456</div>
+                    </div>
+
+                    <div class="balance-card" role="group" aria-label="NGN Balance">
+                        <div class="balance-amount" id="balance2">NGN 20,456</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        // Require user to be logged in
+        AuthUtils.requireAuth();
+
+        // Load user details dynamically
+        loadUserDetails();
+        // ✅ Highlight the active navigation link
+        NavUtils.setActiveNav(window.location.pathname);
+    </script>
+
+</body>
+
+</html>
