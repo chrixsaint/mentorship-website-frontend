@@ -189,7 +189,7 @@ async function loadUserDetails() {
   }
 }
 
-// ✅ Placeholder for loadTransactionsPage to prevent ReferenceError
+// ✅ Placeholder for loadTransactionsPage to prevent ReferenceErrors
 function loadTransactionsPage() {
   console.log("loadTransactionsPage called (placeholder)");
 }
