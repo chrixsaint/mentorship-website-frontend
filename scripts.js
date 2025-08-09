@@ -62,6 +62,12 @@ const AuthUtils = {
       window.location.href = "/login.html";
     }
   },
+
+  // ✅ New: Clear all data and redirect to login
+  clearAndRedirect: () => {
+    localStorage.clear();
+    window.location.href = "/login.html";
+  },
 };
 
 // ✅ API Fetch Wrapper
@@ -94,24 +100,18 @@ async function apiRequest(endpoint, options = {}) {
 async function loadUserDetails() {
   console.log("loadUserDetails called");
   try {
-    // 🔹 Try to get user from localStorage first
-    let userData = AuthUtils.getCurrentUser();
-    console.log("User data from localStorage:", userData);
-
-    // 🔹 If not found in localStorage, fetch from API
-    if (!userData) {
-      userData = await apiRequest("getUserDetails");
-      console.log("User data from API:", userData);
-      if (userData) {
-        localStorage.setItem("loggedInUser", JSON.stringify(userData));
-      }
-    }
-
+    // 🔹 Always fetch fresh data from API for dashboard
+    const userData = await apiRequest("getUserDetails");
+    console.log("User data from API:", userData);
+    
     if (!userData || !userData.firstName) {
       console.warn("User data missing or invalid.");
       AuthUtils.logout();
       return;
     }
+
+    // ✅ Store in localStorage for future use
+    localStorage.setItem("loggedInUser", JSON.stringify(userData));
 
     // ✅ Profile Page Population
     const nameField = document.getElementById("userName");
@@ -153,6 +153,7 @@ async function loadUserDetails() {
 
     // ✅ Populate balances (dashboard only)
     if (userData.balances && userData.balances.length > 0) {
+      console.log("🔹 Balances data received:", userData.balances);
       const balance1El = document.getElementById("balance1");
       const balance2El = document.getElementById("balance2");
       if (balance1El)
@@ -167,11 +168,13 @@ async function loadUserDetails() {
         "Balance 2:",
         balance2El ? balance2El.textContent : "No balance2 element"
       );
+    } else {
+      console.log("❌ No balances data found in userData:", userData.balances);
     }
 
     // ✅ Populate transactions (transactions.html only)
     if (userData.transactions) {
-      const txContainer = document.getElementById("transactions-list");
+      const txContainer = document.getElementById("transaction-list");
       console.log("Transactions:", userData.transactions);
       if (txContainer) {
         txContainer.innerHTML = userData.transactions
@@ -181,7 +184,7 @@ async function loadUserDetails() {
           .join("");
         console.log("Transactions HTML:", txContainer.innerHTML);
       } else {
-        console.log("No transactions-list element");
+        console.log("No transaction-list element");
       }
     }
   } catch (err) {
@@ -189,9 +192,72 @@ async function loadUserDetails() {
   }
 }
 
+// --- Dashboard Data Loader (Step 1 Refactor) ---
+async function loadDashboardData() {
+  try {
+    const userData = await apiRequest("getUserDetails");
+    if (!userData || !userData.firstName) {
+      console.warn("User data missing or invalid.");
+      AuthUtils.logout();
+      return;
+    }
+    renderBalances(userData.balances);
+    renderTransactions(userData.transactions);
+  } catch (err) {
+    console.error("Failed to load dashboard data:", err);
+    // (UI error handling will be added in next steps)
+  }
+}
+
+function renderBalances(balances) {
+  if (!balances || balances.length === 0) return;
+  const balance1El = document.getElementById("balance1");
+  const balance2El = document.getElementById("balance2");
+  if (balance1El) balance1El.textContent = `NGN${balances[0].balance1}`;
+  if (balance2El) balance2El.textContent = `NGN${balances[0].balance2}`;
+}
+
+function renderTransactions(transactions) {
+  const txContainer = document.getElementById("transaction-list");
+  if (!txContainer) return;
+  if (!transactions || transactions.length === 0) {
+    txContainer.innerHTML = '<div class="no-transactions">No transactions found.</div>';
+    return;
+  }
+  txContainer.innerHTML = transactions
+    .map(
+      (tx) => `
+        <article class="transaction-item" role="listitem">
+          <div class="transaction-icon">
+            <div class="transaction-circle" aria-hidden="true">
+              <img class="img" src="./images/arrow-down-circle.svg" alt="arrow down logo" />
+            </div>
+          </div>
+          <div class="transaction-details">
+            <div class="transaction-main-text">${tx.narration || tx.type}</div>
+            <div class="transaction-secondary-text">${new Date(tx.createdAt).toLocaleDateString()}</div>
+          </div>
+          <div class="transaction-meta">
+            <div class="transaction-id">${tx.transactionReference || tx.transactionId}</div>
+            <div class="transaction-amount">NGN${tx.amount}</div>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
 // ✅ Placeholder for loadTransactionsPage to prevent ReferenceErrors
 function loadTransactionsPage() {
-  console.log("loadTransactionsPage called (placeholder)");
+  console.log("loadTransactionsPage called");
+  apiRequest("getUserDetails")
+    .then((userData) => {
+      if (!userData) return;
+      renderTransactions(userData.transactions || []);
+    })
+    .catch((err) => {
+      console.error("Failed to load transactions:", err);
+    });
 }
 
 // ✅ Make utilities globally available

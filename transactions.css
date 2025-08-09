@@ -2,7 +2,7 @@
 
 /* Transactions Section */
 .transactions-section {
-    max-width: 800px;
+    max-width: 500px;
 }
 
 /* .img {
@@ -58,7 +58,8 @@
 
 /* Transaction Details (Left side content) */
 .transaction-details {
-    flex-grow: 1;
+    flex: 0 0 120px;
+    /* constrain narration width; adjust 280–360px as needed */
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -84,7 +85,11 @@
 .transaction-meta {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 29px;
+    /* tighter spacing between reference and amount */
+    /* closer spacing between id and amount */
+    padding-left: 0;
+    /* remove extra left padding */
 }
 
 .transaction-id {
@@ -94,7 +99,8 @@
     letter-spacing: 0.01em;
     line-height: 1.2em;
     /* max-width: 120px; */
-    padding-right: 206px;
+    padding-right: 0;
+    /* reduce space before amount */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -142,22 +148,31 @@
 
     .transaction-details {
         width: 100%;
+        flex: 1 1 auto;
+        /* allow full width on mobile */
     }
 
     .transaction-meta {
         width: 100%;
+        position: static;
+        /* reset absolute system on mobile */
+        gap: 10px;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 10px;
     }
 
     .transaction-id {
+        position: static;
+        /* normal flow on mobile */
+        transform: none;
         max-width: none;
         flex: 1;
     }
 
     .transaction-amount {
         min-width: auto;
+        text-align: right;
+        font-weight: 600;
     }
 }
 

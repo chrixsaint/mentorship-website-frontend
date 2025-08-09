@@ -43,11 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await res.json();
       console.log("Login response:", data);
 
-      if (res.ok && data.token) {
+      if (data && data.token) {
         localStorage.setItem("authToken", data.token);
-        window.location.href = "/dashboard.html";
+        if (data.personal) {
+          localStorage.setItem("loggedInUser", JSON.stringify(data.personal));
+        }
+        window.location.href = "dashboard.html";
       } else {
-        errorMessage.textContent = data.error || "Invalid email or password.";
+        errorMessage.textContent = data && (data.message || data.error) || "Invalid email or password.";
       }
     } catch (err) {
       console.error("Login error:", err);
